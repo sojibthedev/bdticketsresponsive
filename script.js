@@ -57,8 +57,8 @@ const jsonData=[
     }
 ]
     var from=document.getElementById('soValue');
-    var toss=document.getElementById('soValuetwo');
-    var datapick=document.getElementById('datapick');
+    var toData=document.getElementById('soValuetwo');
+    var taking_data=document.getElementById('datapick');
     var gfrom=document.getElementById('form');
     var gto=document.getElementById('to');
     var gdates=document.getElementById('dates');
@@ -70,11 +70,11 @@ const jsonData=[
 function datachacking(){
    
 
-   if(from.value=="" || toss.value=="" || datapick.value=="" ){
+   if(from.value=="" || toData.value=="" || taking_data.value=="" ){
     alert("empty");
    }else{
 
- if(from.value==toss.value){
+ if(from.value==toData.value){
     alert("GOING FORM  TO");
      location.reload();
  }else{
@@ -84,10 +84,10 @@ function datachacking(){
 
     for(i=0;i<jsonData.length;i++){
 
-   var date1 = new Date(datapick.value);
+   var date1 = new Date(taking_data.value);
    var date2 = new Date(test(jsonData[i].date));
 
-    if(from.value===jsonData[i].from && toss.value===jsonData[i].to && date1.getTime()===date2.getTime()){
+    if(from.value===jsonData[i].from && toData.value===jsonData[i].to && date1.getTime()===date2.getTime()){
          gfrom.innerHTML=jsonData[i].from;
          gto.innerHTML=jsonData[i].to;
          gdates.innerHTML=jsonData[i].date;
@@ -125,8 +125,8 @@ function test(date){
 function sweping(){
 //console.log(from.value);
     var d=from.value;
-    from.value=toss.value;
-    toss.value=d;
+    from.value=toData.value;
+    toData.value=d;
 }
 const selectBox = document.querySelector('.select-box');
 const selectOption = document.querySelector('.select-option');
