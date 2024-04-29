@@ -59,7 +59,6 @@ const jsonData=[
     var from=document.getElementById('soValue');
     var toss=document.getElementById('soValuetwo');
     var datapick=document.getElementById('datapick');
-
     var gfrom=document.getElementById('form');
     var gto=document.getElementById('to');
     var gdates=document.getElementById('dates');
@@ -89,8 +88,6 @@ function datachacking(){
    var date2 = new Date(test(jsonData[i].date));
 
     if(from.value===jsonData[i].from && toss.value===jsonData[i].to && date1.getTime()===date2.getTime()){
-         console.log("data macking");
-         
          gfrom.innerHTML=jsonData[i].from;
          gto.innerHTML=jsonData[i].to;
          gdates.innerHTML=jsonData[i].date;
@@ -98,7 +95,7 @@ function datachacking(){
          busmod.innerHTML=jsonData[i].bus_model;
          busnam.innerHTML=jsonData[i].bus_name;
         
-        setInterval(loaddder, 1000);
+        setInterval(loaddder, 4000);
          break;
         }else{
             if(jsonData.length-1==i){
@@ -109,7 +106,7 @@ function datachacking(){
                 gfar.innerHTML="No bus available";
                 busnam.innerHTML="No bus available";
                 busmod.innerHTML="No bus available";
-                setInterval(loaddder, 1000);
+                setInterval(loaddder, 4000);
             }
            
         }
@@ -211,5 +208,4 @@ optionSearchtwo.addEventListener('keyup',function(){
                li[i].style.display = 'none';
           }
      }
-
 })
